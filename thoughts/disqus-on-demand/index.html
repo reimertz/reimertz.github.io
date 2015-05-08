@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>reimertz.co - Disqus on demand</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description">
+	<meta name="revisit-after" content="3 days">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet"
+	type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Merriweather:400italic,400,700,700italic"
+	rel="stylesheet" type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet"
+	type="text/css">
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:700,900" rel="stylesheet"
+	type="text/css">
+	<link href="img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+	<!--Page-related styles & scripts-->
+	<!-- build:css .build/scripts/head.css -->
+	<link href="/styles/main.css" rel="stylesheet" type="text/css">
+	<!-- endbuild -->
+	<!-- build:js .build/scripts/head.js -->
+	<script src="/scripts/bowerfiles.min.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body class="thoughts single">
+	<script type="text/javascript">
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js',
+			'ga');
+		ga('create', 'UA-61798566-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+	<header style="background-image:url('/images/thoughts/disqus.png')" class="full-height-header">
+		<nav>
+			<ul>
+				<li><a href="/"><strong>reimertz.co</strong></a></li>
+				<li><a href="/thoughts">thoughts</a></li>
+				<li><a href="/music">music</a></li>
+				<li><a href="/projects">projects</a></li>
+				<li><a href="/photos">photos</a></li>
+				<li><a href="/me">me</a></li>
+			</ul>
+		</nav>
+		<section class="titles">
+			<h1>Disqus on demand</h1>
+			<h3>Let's get those 500ms back!</h3></section>
+		<section class="small-header">
+			<div class="written-on"><span>2015-04-28</span></div>
+			<div class="reading-time"><span>1 min</span></div><a href="https://twitter.com/share" class="twitter-share-button">Tweet<script>window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));</script></a></section>
+		<section
+		class="fixed-small-header">
+			<div class="title"><span>Disqus on demand</span></div><a href="https://twitter.com/share" class="twitter-share-button">Tweet<script>window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));</script></a></section>
+	</header>
+	<main role="main" class="side-margin">
+		<article itemscope="" itemtype="http://schema.org/Article">
+			<meta itemprop="name">
+			<meta itemprop="dateCreated" content="Tue Apr 28 2015 02:00:00 GMT+0200 (CEST)">
+			<meta itemprop="author" content="Piêrre Reimertz">
+			<section>
+				<p>I realized that by including Disqus on your homepage, loading times increase
+					between 500-1000ms! So why not load disqus on demand instead? This solution
+					doesn&#39;t have any library dependencies.</p>
+				<pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"show-comments"</span>&gt;</span>Comments<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"disqus_thread"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text/javascript"</span>&gt;</span><span class="javascript">
+
+<span class="hljs-keyword">var</span> disqus_shortname = <span class="hljs-string">'&lt;enter your disqus shortname here&gt;'</span>,
+  disqus_url = <span class="hljs-built_in">window</span>.location.href,
+  disqus_title = <span class="hljs-string">'&lt;enter a title here&gt;'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loadDisqusOnDemand</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">var</span> script = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'script'</span>);
+
+    script.type = <span class="hljs-string">'text/javascript'</span>;
+    script.async = <span class="hljs-literal">true</span>;
+    script.src = <span class="hljs-string">'//go.disqus.com/embed.js'</span>;
+
+    (<span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">'head'</span>)[<span class="hljs-number">0</span>]
+      || <span class="hljs-built_in">document</span>.getElementsByTagName(<span class="hljs-string">'body'</span>)[<span class="hljs-number">0</span>]).appendChild(script);
+
+    <span class="hljs-comment">//hides the button and remove event listeners</span>
+    <span class="hljs-keyword">this</span>.removeEventListener(<span class="hljs-string">'click'</span>, loadDisqusOnDemand);
+    <span class="hljs-keyword">this</span>.style.opacity = <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-built_in">document</span>
+  .getElementById(<span class="hljs-string">'show-comments'</span>)
+  .addEventListener(<span class="hljs-string">'click'</span>, loadDisqusOnDemand);
+
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+
+				<p>Try it below!</p>
+			</section>
+			<footer>
+				<section class="me"><img src="/images/me6.jpg">
+					<div>
+						<h3>Piérre Reimertz</h3><a href="https://twitter.com/reimertz" data-show-count="true" data-width="200"
+						class="twitter-follow-button">Follow @reimertz</a>
+						<script type="text/javascript">
+							window.twttr = (function(d, s, id) {
+								var js, fjs = d.getElementsByTagName(s)[0],
+									t = window.twttr || {};
+								if (d.getElementById(id)) return;
+								js = d.createElement(s);
+								js.id = id;
+								js.src = "https://platform.twitter.com/widgets.js";
+								fjs.parentNode.insertBefore(js, fjs);
+								t._e = [];
+								t.ready = function(f) {
+									t._e.push(f);
+								};
+								return t;
+							}(document, "script", "twitter-wjs"));
+						</script>
+					</div>
+				</section>
+			</footer>
+		</article>
+		<section class="comments"><a id="show-comments"><h3>Load Comments</h3></a>
+			<div id="disqus_thread"></div>
+			<style>
+				#thread-subscribe-button {
+					display: none;
+				}
+			</style>
+			<script>
+				var disqus_shortname = 'reimertz-org',
+					disqus_url = window.location.href,
+					disqus_title = 'Disqus on demand';
+
+				function loadDisqusOnDemand() {
+					var dsq = document.createElement('script');
+					dsq.type = 'text/javascript';
+					dsq.async = true;
+					dsq.src = '//go.disqus.com/embed.js';
+					(document.getElementsByTagName('head')[0] || document.getElementsByTagName(
+						'body')[0]).appendChild(dsq);
+					this.removeEventListener('click', loadDisqusOnDemand);
+					this.style.opacity = 0;
+				}
+				document.getElementById('show-comments').addEventListener('click',
+					loadDisqusOnDemand);
+			</script>
+		</section>
+	</main>
+	<!-- build:js .build/scripts/page.js -->
+	<script src="/scripts/fadein-fadeout.js"></script>
+	<script src="/scripts/fixed-header.js"></script>
+	<!-- endbuild -->
+	<!--[if lt IE 9]><script type="text/javascript">document.createElement("header");
+document.createElement("footer");
+document.createElement("section");
+document.createElement("aside");
+document.createElement("nav");
+document.createElement("article");
+document.createElement("hgroup");
+document.createElement("time");
+</script><noscript>s=Warning!
+Because your browser does not support HTML5, some elements are created using JavaScript.
+Unfortunately your browser has disabled scripting. Please enable it in order to display this page properly.
+</noscript><![endif]-->
+</body>
+
+</html>

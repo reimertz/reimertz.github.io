@@ -1,0 +1,108 @@
+pre,
+code {
+	font-family: "Source Code Pro", Monaco, Menlo, Consolas, monospace;
+	font-size: 0.85rem
+}
+
+p code {
+	padding: 0 5px;
+	color: #a6b9c9;
+	background: #2a3946
+}
+
+pre {
+	padding: 0;
+	line-height: 1.4rem;
+	position: relative;
+	overflow: visible
+}
+
+pre code {
+	border: none;
+	display: block;
+	padding: 0
+}
+
+.hljs {
+	background: #2a3946;
+	color: #c5c8c6;
+	padding: 1em;
+	word-break: break-word
+}
+
+pre {}
+
+pre .hljs-comment {
+	color: #969896
+}
+
+pre .hljs-variable,
+pre .hljs-attribute,
+pre .hljs-tag,
+pre .hljs-regexp,
+pre .ruby .hljs-constant,
+pre .xml .hljs-tag .hljs-title,
+pre .xml .hljs-pi,
+pre .xml .hljs-doctype,
+pre .html .hljs-doctype,
+pre .css .hljs-id,
+pre .css .hljs-class,
+pre .css .hljs-pseudo {
+	color: #cc6666
+}
+
+pre .hljs-number,
+pre .hljs-preprocessor,
+pre .hljs-pragma,
+pre .hljs-built_in,
+pre .hljs-literal,
+pre .hljs-params,
+pre .hljs-constant {
+	color: #de935f
+}
+
+pre .ruby .hljs-class .hljs-title,
+pre .css .hljs-rule .hljs-attribute {
+	color: #f0c674
+}
+
+pre .hljs-string,
+pre .hljs-value,
+pre .hljs-inheritance,
+pre .hljs-header,
+pre .hljs-name,
+pre .ruby .hljs-symbol,
+pre .xml .hljs-cdata {
+	color: #b5bd68
+}
+
+pre .hljs-title,
+pre .css .hljs-hexcolor {
+	color: #b5bd68
+}
+
+pre .hljs-function,
+pre .python .hljs-decorator,
+pre .python .hljs-title,
+pre .ruby .hljs-function .hljs-title,
+pre .ruby .hljs-title .hljs-keyword,
+pre .perl .hljs-sub,
+pre .javascript .hljs-title,
+pre .coffeescript .hljs-title {
+	color: #81a2be
+}
+
+pre .hljs-keyword,
+pre .javascript .hljs-function {
+	color: #b294bb
+}
+
+pre .coffeescript .javascript,
+pre .javascript .xml,
+pre .tex .hljs-formula,
+pre .xml .javascript,
+pre .xml .vbscript,
+pre .xml .css,
+pre .xml .hljs-cdata {
+	opacity: 0.5
+}

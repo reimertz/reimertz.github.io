@@ -1,0 +1,28 @@
+.fade-grounds {
+	display: fixed;
+	height: 100%;
+	left: 0;
+	opacity: 0.4;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: -1337
+}
+
+.fade-grounds section {
+	display: block;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	background-size: cover;
+	height: 100%;
+	left: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 0
+}
+
+.fade-grounds>section:first-of-type {
+	opacity: 1
+}
